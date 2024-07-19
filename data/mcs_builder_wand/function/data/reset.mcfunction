@@ -15,6 +15,14 @@ scoreboard players reset @s wand_count_z
 scoreboard players reset @s wand_count_z2
 
 #
+scoreboard players reset @s wand_get_x
+scoreboard players reset @s wand_get_x2
+scoreboard players reset @s wand_get_y
+scoreboard players reset @s wand_get_y2
+scoreboard players reset @s wand_get_z
+scoreboard players reset @s wand_get_z2
+
+#
 scoreboard players reset @s wand_count
 scoreboard players reset @s wand_total
 
