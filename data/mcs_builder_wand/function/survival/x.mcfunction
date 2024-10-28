@@ -1,15 +1,21 @@
-#
-scoreboard players operation @s wand_get_x = @s wand_x
-scoreboard players operation @s wand_get_x2 = @s wand_x2
+#######################################################################################
+# x1 = x2 then fetch "x1 value" for "get_x1":
+#######################################################################################
+execute if score @s wand_x = @s wand_x2 run scoreboard players operation @s wand_get_x = @s wand_x
+
+#######################################################################################
+# x1 > x2 then fetch "x1 value" for "get_x1":
+#######################################################################################
+execute if score @s wand_x > @s wand_x2 run scoreboard players operation @s wand_get_x = @s wand_x
+execute if score @s wand_x > @s wand_x2 run scoreboard players operation @s wand_get_x -= @s wand_x2
+execute if score @s wand_x > @s wand_x2 run scoreboard players add @s wand_get_x 1
+
+# x2 > x1 then fetch "x2 value" for "get_x2":
+execute if score @s wand_x2 > @s wand_x run scoreboard players operation @s wand_get_x = @s wand_x2
+execute if score @s wand_x2 > @s wand_x run scoreboard players operation @s wand_get_x -= @s wand_x
+execute if score @s wand_x2 > @s wand_x run scoreboard players add @s wand_get_x 1
 
 #
-scoreboard players operation @s[scores={wand_x2=0..}] wand_get_x += @s wand_x2
-scoreboard players operation @s[scores={wand_x2=0..}] wand_get_x2 += @s wand_x
-
-#
-scoreboard players operation @s[scores={wand_x=..0}] wand_get_x -= @s wand_x2
-scoreboard players operation @s[scores={wand_x2=..0}] wand_get_x2 -= @s wand_x
-
-#
-scoreboard players add @s[scores={wand_get_x=1..}] wand_get_x 1
-scoreboard players add @s[scores={wand_get_x2=1..}] wand_get_x2 1
+execute if score @s wand_x = @s wand_x2 run scoreboard players set @s wand_result_x_and_z 1
+execute if score @s wand_x > @s wand_x2 run scoreboard players operation @s wand_result_x_and_z = @s wand_get_x
+execute if score @s wand_x2 > @s wand_x run scoreboard players operation @s wand_result_x_and_z = @s wand_get_x

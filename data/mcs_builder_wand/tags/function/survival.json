@@ -1,0 +1,9 @@
+{
+	"values": [
+		"mcs_builder_wand:survival/x",
+		"mcs_builder_wand:survival/y",
+		"mcs_builder_wand:survival/z",
+		"mcs_builder_wand:data/store",
+		"mcs_builder_wand:data/marker"
+	]
+}
