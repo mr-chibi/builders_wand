@@ -1,6 +1,6 @@
 # Detect:
-execute unless data entity @s[scores={builders_wand_used=1..},tag=builders_wand] {Inventory:[{Slot:-106b}]} run tellraw @s [{"text": "Error, place a block in your offhand, then right click with the wand!", "color": "red"}]
-execute unless data entity @s[scores={builders_wand_used=1..},tag=builders_wand] {Inventory:[{Slot:-106b}]} run scoreboard players set @s builders_wand_used 0
+execute unless data entity @s[scores={builders_wand_used=1..},tag=builders_wand] equipment.offhand.id run tellraw @s [{"text": "Error, place a block in your offhand, then right click with the wand!", "color": "red"}]
+execute unless data entity @s[scores={builders_wand_used=1..},tag=builders_wand] equipment.offhand.id run scoreboard players set @s builders_wand_used 0
 
 # Right Click:
 execute if score @s[tag=builders_wand] builders_wand_used matches 1 run function mcs_builder_wand:rclick_1
