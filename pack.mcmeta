@@ -1,6 +1,8 @@
 {
 	"pack": {
-		"pack_format": 81,
-		"description": "Created by Mr_Chibi"
+		"description": "Created by Mr_Chibi",
+		"pack_format": 88,
+	    "min_format": 88,
+	    "max_format": 88
 	}
 }
